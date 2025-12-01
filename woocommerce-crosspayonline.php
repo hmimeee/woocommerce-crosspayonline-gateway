@@ -42,6 +42,7 @@ if (! in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', ge
 function wc_crosspayonline_add_to_gateways($gateways)
 {
     $gateways[] = 'WC_CrossPayOnline_Credit_Card_Gateway';
+    $gateways[] = 'WC_CrossPayOnline_Paypal_Gateway';
     $gateways[] = 'WC_CrossPayOnline_Lahza_Gateway';
     $gateways[] = 'WC_CrossPayOnline_Spaceremit_Gateway';
     $gateways[] = 'WC_CrossPayOnline_Usdt_Gateway';
@@ -113,6 +114,7 @@ function wc_crosspayonline_gateway_init()
 {
     require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Gateway.php';
     require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Credit_Card_Gateway.php';
+    require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Paypal_Gateway.php';
     require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Lahza_Gateway.php';
     require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Spaceremit_Gateway.php';
     require_once plugin_dir_path(__FILE__) . 'classes/WC_CrossPayOnline_Usdt_Gateway.php';
