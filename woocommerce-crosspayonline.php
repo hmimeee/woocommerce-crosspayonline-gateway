@@ -56,7 +56,7 @@ add_filter('woocommerce_payment_gateways', 'wc_crosspayonline_add_to_gateways');
 add_action('init', 'crosspayonline_init_internal');
 function crosspayonline_init_internal()
 {
-    add_rewrite_rule('parse-crosspayonline-request.php$', 'index.php?crosspay_api=1', 'top');
+    add_rewrite_rule('parse-crosspayonline-request.php$', 'index.php?crosspayonline_api=1', 'top');
 }
 
 add_filter('query_vars', 'crosspayonline_query_vars');
