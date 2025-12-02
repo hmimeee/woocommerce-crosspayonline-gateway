@@ -155,7 +155,7 @@ class WC_CrossPayOnline_Gateway extends WC_Payment_Gateway
         $bill_url = 'https://crosspayonline.com/api/' . $endpoint . '?api_data=82e4b4fd3a16ad99229af9911ce8e6d2&invoice_id=' . $order_id . '&apiKey=' . $this->api_key . '&total=' . $total_bill . '&currency=USD&inv_details={"inv_items": [{"name": "Shoping from store","quntity": "1.00","unitPrice": "' . $total_bill . '","totalPrice": "' . $total_bill . '","currency": "USD"}],"inv_info":[{"row_title":"Vat","row_value":"0"},{"row_title":"Delevery","row_value":"0"},{"row_title":"Promo Code","row_value":0},{"row_title":"Discounts","row_value":0}],"user" :{"userName":"test"}}&return_url=' . $this->callback_url . '&email=' . $c_email . '&mobile=' . $c_mobile . '&name=' . $c_name;
 
         // Mark as on-hold (we're awaiting the payment)
-        $order->update_status('on-hold', __('Awaiting offline payment', 'crosspayonline_gateway'));
+        $order->update_status('on-hold', __('Awaiting for payment.', 'crosspayonline_gateway'));
 
         // Reduce stock levels
         wc_reduce_stock_levels($order_id);
