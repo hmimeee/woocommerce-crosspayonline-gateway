@@ -1,5 +1,4 @@
-<?
-require('wp-load.php');
+<?php
 
 $f_api = $_GET['fawry_api'];
 $arr_api = explode("=", $f_api);
@@ -19,6 +18,5 @@ if ($order_id > 0) {
 }
 
 $url = get_site_url();
-//print $url;
 wp_redirect($url);
 exit;

@@ -1,5 +1,6 @@
-<?
-require('../../../wp-load.php');
+<?php
+
+require('../../../../wp-load.php');
 
 $is_paid = $_GET['is_paid'];
 $isLive =  $_GET['live'];
@@ -17,7 +18,7 @@ $order = new WC_Order($order_id);
 
 if ($order_id > 0) {
   if ($is_paid == 1) {
-    $order->update_status('processing', 'Payment reseved successfuly ');
+    $order->update_status('processing', 'Payment received successfully Bill Ref Number ID: ' . $faw_id . ' , now order in process');
   } else {
     $order->update_status('failed', 'Payment Failed ');
   }
